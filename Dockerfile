@@ -3,7 +3,11 @@ MAINTAINER Thierry Corbin <thierry.corbin@kauden.fr>
 
 RUN echo "postfix postfix/mailname string gmail.com" | debconf-set-selections
 RUN echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections
-RUN apt-get update && apt-get install -y postfix \
+
+RUN apt-get update && \
+    apt-get -y upgrade
+
+RUN apt-get install -y postfix \
     supervisor
 
 RUN apt-get clean && \
