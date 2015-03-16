@@ -1,4 +1,5 @@
 FROM ubuntu:14.04.2
+MAINTAINER Thierry Corbin <thierry.corbin@kauden.fr>
 
 RUN echo "postfix postfix/mailname string gmail.com" | debconf-set-selections
 RUN echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections
