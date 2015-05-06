@@ -1,4 +1,4 @@
-FROM ubuntu:14.04.2
+FROM ubuntu:14.04
 MAINTAINER Thierry Corbin <thierry.corbin@kauden.fr>
 
 RUN echo "postfix postfix/mailname string gmail.com" | debconf-set-selections
