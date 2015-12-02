@@ -5,7 +5,6 @@ RUN echo "postfix postfix/mailname string gmail.com" | debconf-set-selections
 RUN echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections
 
 RUN apt-get update && \
-    apt-get -y upgrade && \
     apt-get install -y postfix \
     supervisor \
     --no-install-recommends && \
