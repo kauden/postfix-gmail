@@ -7,7 +7,8 @@ RUN echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set
 RUN apt-get update && \
     apt-get -y upgrade && \
     apt-get install -y postfix \
-    supervisor && \
+    supervisor \
+    --no-install-recommends && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /tmp/*
